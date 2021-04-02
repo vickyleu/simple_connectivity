@@ -3,6 +3,9 @@
 *.lock
 *.log
 *.pyc
+.dart_tool
+.idea
+.packages
 *.swp
     .DS_Store
     .atom/
