@@ -4,6 +4,7 @@
 *.log
 *.pyc
 .dart_tool
+
 .idea
 .packages
 *.swp
@@ -32,9 +33,8 @@ test/.test_coverage.dart
     .pub-cache/
     .pub/
 build/
-
+**.flutter-plugins*
 # Android related
-**/android/**/gradle-wrapper.jar
 **/android/.gradle
 **/android/captures/
 **/android/gradlew
