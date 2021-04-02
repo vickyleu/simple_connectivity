@@ -36,7 +36,6 @@ rootProject.allprojects {
 }
 
 //apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
 apply plugin: 'com.android.library'
 
 android {
