@@ -29,12 +29,12 @@ class ConnectivityPlugin : FlutterPlugin, MethodCallHandler, EventChannel.Stream
     private var channel: MethodChannel? = null
     private var binding: FlutterPlugin.FlutterPluginBinding? = null
 
-    override fun onListen(arguments: Any, events: EventSink) {
+    override fun onListen(arguments: Any?, events: EventSink) {
         receiver = createReceiver(events)
         binding?.applicationContext?.registerReceiver(receiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
     }
 
-    override fun onCancel(arguments: Any) {
+    override fun onCancel(arguments: Any?) {
         binding?.applicationContext?.unregisterReceiver(receiver)
         receiver = null
     }
