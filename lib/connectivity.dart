@@ -25,14 +25,14 @@ class Connectivity {
     if (_singleton == null) {
       _singleton = Connectivity._();
     }
-    return _singleton;
+    return _singleton!;
   }
 
   Connectivity._();
 
-  static Connectivity _singleton;
+  static Connectivity? _singleton;
 
-  Stream<ConnectivityResult> _onConnectivityChanged;
+  Stream<ConnectivityResult>? _onConnectivityChanged;
 
   @visibleForTesting
   static const MethodChannel methodChannel = MethodChannel(
@@ -45,7 +45,7 @@ class Connectivity {
   );
 
   /// Fires whenever the connectivity state changes.
-  Stream<ConnectivityResult> get onConnectivityChanged {
+  Stream<ConnectivityResult>? get onConnectivityChanged {
     if (_onConnectivityChanged == null) {
       _onConnectivityChanged = eventChannel
           .receiveBroadcastStream()
@@ -61,12 +61,12 @@ class Connectivity {
   ///
   /// Instead listen for connectivity changes via [onConnectivityChanged] stream.
   Future<ConnectivityResult> checkConnectivity() async {
-    final String result = await methodChannel.invokeMethod<String>('check');
+    final String? result = await methodChannel.invokeMethod<String>('check');
     return _parseConnectivityResult(result);
   }
 }
 
-ConnectivityResult _parseConnectivityResult(String state) {
+ConnectivityResult _parseConnectivityResult(String? state) {
   switch (state) {
     case 'wifi':
       return ConnectivityResult.wifi;

@@ -16,15 +16,13 @@ flutter:
 dependencies:
   flutter:
     sdk: flutter
-  meta: "^1.0.5"
+  meta: ^1.0.5
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   flutter_driver:
     sdk: flutter
   test: any
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.13.0 <3.0.0'
   flutter: any
